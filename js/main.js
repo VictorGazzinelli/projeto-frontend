@@ -2,7 +2,7 @@ window.addEventListener('load', getLocation);
 
 let geolocationInput = null
 
-async function getLocation() {
+function getLocation() {
   geolocationInput = document.querySelector('#geolocationInput')
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(onGetCurrentPositionSuccess, onGetCurrentPositionError);
@@ -11,8 +11,11 @@ async function getLocation() {
   }
 }
 
-function onGetCurrentPositionSuccess(position) {
-  geolocationInput.innerHTML = `Latitude: ${position.coords.latitude} Longitude: ${position.coords.longitude}`;
+async function onGetCurrentPositionSuccess(position) {
+  const latitude = position.coords.latitude,
+        longitude = position.coords.longitude
+  geolocationInput.innerHTML = `Latitude: ${latitude} Longitude: ${longitude}`;
+  geolocationInput.innerHTML = await fetchGeoLocationWithGoogleMapsReturningAddress(latitude, longitude)
 }
 
 function onGetCurrentPositionError(error){
@@ -30,4 +33,10 @@ function onGetCurrentPositionError(error){
       geolocationInput.innerHTML = "Um erro desconhecido ocorreu"
       break;
   }
+}
+
+async function fetchGeoLocationWithGoogleMapsReturningAddress(lat, lng){
+  const reverseGeocodingGoogleMapsUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=AIzaSyAfT5eJwacqT02LPYTp-XxWCAN43zBFA-M`
+  const jsonResponse = await (await fetch(reverseGeocodingGoogleMapsUrl)).json()
+  return jsonResponse.results[0].formatted_address;
 }
