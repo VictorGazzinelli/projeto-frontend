@@ -1,3 +1,4 @@
+require("regenerator-runtime/runtime");
 window.addEventListener('load', getLocation);
 
 let geolocationInput = null
