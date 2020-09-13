@@ -7,3 +7,10 @@ section.main-feature {
   width: 80vw;
   height: 85vh;
 }
+section.colorChange{
+  background-color:red;
+
+  @include breakpoint(mobile){
+    background-color:blue;
+  }
+}
