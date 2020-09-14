@@ -67,34 +67,54 @@ sub {
 // ==========================================================================
 
 body {
-font-family: Nunito, sans-serif;
-font-size: $global-font-size;
-color: #222;
+  font-family: Nunito, sans-serif;
+  font-size: $global-font-size;
+  color: #222;
+  background-color: white;
+  @include breakpoint(desktop){
+    font-family: Nunito, sans-serif;
+    font-size: $global-font-size;
+    color: white;
+    background-color: #222;
+  }
 }
 
 header {
-  background-color: #627A14;
-  padding: 1vh 1vw;
-  height: 10vh;
-  box-sizing: border-box;
-  color: #fff;
+  display: block;
+  background-color: #222;
+  background-color: rgba(32,32,32,0.8);
+  color: white;
+  margin:0;
+  padding: 0;
+  height: auto;
+  @include breakpoint(desktop){
+    display: block;
+    background-color: white;
+    background-color: rgba(255,255,255,0.8);
+    color: black;
+    margin:0;
+    padding: 0;
+    height: auto;
+  }
 }
 
-main {
-  height: 85vh;
+h1 {
+  padding-left: 16px;
+  display:inline-block;
+  margin: 0;
 }
 
-footer {
-  height: 5vh;
-  background-color: #B3CB65;
+nav {
+  margin-bottom: 0;
+  float:right;
+  display:inline;
 }
 
-aside {
-float: right;
-background-color: #6F4D8F;
-width: 20vw;
-height: 85vh;
-color: #fff;
+ul {
+  margin:0;
+  padding:0;
+  list-style-type: none;
+  display: inline-block;
 }
 
 // ::selection {

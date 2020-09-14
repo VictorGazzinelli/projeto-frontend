@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Projeto Front-end</title>
+  <title>My Awesome Web App</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -12,10 +12,9 @@
   <meta property="og:url" content="">
   <meta property="og:image" content="">
 
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
-
+  <link rel="manifest" href="site.webmanifest"/>
+  <link rel="apple-touch-icon" href="icon.png"/>
+  <link rel="shortcut icon" href="favicon.ico"/>
   <link rel="stylesheet" href="./sass/style.scss" />
 
   <meta name="theme-color" content="#fafafa">
@@ -23,25 +22,24 @@
 
 <body>
 
-  <header>
-    <h1>Título da sua página ou webapp</h1>
-    <nav>Menu de navegação principal</nav>
-    </header>
-    <main>
-    <section class="colorChange">
-      <div>
-        <span id="geolocationInputLabel"> Sua Localização: </span>
-        <span id="geolocationInput"></span>
-      </div>
-    </section>
-    <aside>
-    Algum conteúdo ou feature não-principal de apoio
-    </aside>
-    </main>
-    <footer>
-    Informações gerais, recursos secundários de apoio,
-   nome do autor.
-  </footer>
+  <header class="header">
+      <h1 class="header__tittle">Lorem ipsum dolor</h1>
+      <nav class="header__nav">
+        <ul>
+          <li class="header__nav__item">
+            <a class="header__nav__link--is-active" href="#">
+              Home
+            </a>
+          </li>
+        </ul>
+      </nav>
+  </header>
+
+  <div>
+    <span id="geolocationInputLabel"> Sua Localização: </span>
+    <span id="geolocationInput"></span>
+  </div>
+
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>

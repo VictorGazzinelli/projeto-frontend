@@ -1,0 +1,12 @@
+.header__tittle {
+  text-transform: capitalize;
+  font-style: italic;
+}
+
+.header__nav__link{
+  text-decoration: none;
+  &--isActive{
+    text-decoration: underline;
+  }
+}
+

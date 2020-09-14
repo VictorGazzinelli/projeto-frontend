@@ -5,8 +5,8 @@
   "license": "WTFPL",
   "author": "Victor Gazzinelli",
   "scripts": {
-    "build": "parcel build index.html",
-    "dev": "parcel index.html --open",
+    "build": "parcel build src/index.html",
+    "dev": "parcel src/index.html --open",
     "start": "npm run build && npm run dev"
   },
   "devDependencies": {
