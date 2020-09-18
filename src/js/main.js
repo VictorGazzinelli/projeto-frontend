@@ -41,3 +41,24 @@ async function fetchGeoLocationWithGoogleMapsReturningAddress(lat, lng){
   const jsonResponse = await (await fetch(reverseGeocodingGoogleMapsUrl)).json()
   return jsonResponse.results[0].formatted_address;
 }
+
+// v0.3.0
+
+function getNumbersWithUndefined(){
+  var arr = new Array()
+  for(let i = 0; i <= 5 ; i++){
+    if(i == 3)
+      arr.push(undefined)
+    else
+      arr.push(i)
+  }
+  return arr
+}
+var numbers = getNumbersWithUndefined()
+
+var sum = numbers.reduce(function(i, j){
+  j = typeof j !== "undefined" ? j : 0
+  return i + j
+})
+
+console.log("A soma dos numeros é " + sum)
