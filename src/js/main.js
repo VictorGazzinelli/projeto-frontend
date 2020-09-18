@@ -52,9 +52,6 @@ function getNumbersWithUndefined(){
 }
 let numbers = getNumbersWithUndefined()
 
-let sum = numbers.reduce(function(i, j){
-  j = typeof j !== "undefined" ? j : 0
-  return i + j
-})
+let sum = numbers.reduce((i,j = 0) => i + j)
 
 console.log("A soma dos numeros é " + sum)
