@@ -45,18 +45,14 @@ async function fetchGeoLocationWithGoogleMapsReturningAddress(lat, lng){
 // v0.3.0
 
 function getNumbersWithUndefined(){
-  var arr = new Array()
-  for(let i = 0; i <= 5 ; i++){
-    if(i == 3)
-      arr.push(undefined)
-    else
-      arr.push(i)
-  }
+  let arr = new Array()
+  for(let i = 0; i <= 5 ; i++)
+    arr =  i == 3 ? [...arr, undefined] : [...arr, i]
   return arr
 }
-var numbers = getNumbersWithUndefined()
+let numbers = getNumbersWithUndefined()
 
-var sum = numbers.reduce(function(i, j){
+let sum = numbers.reduce(function(i, j){
   j = typeof j !== "undefined" ? j : 0
   return i + j
 })
