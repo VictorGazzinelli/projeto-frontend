@@ -54,4 +54,4 @@ let numbers = getNumbersWithUndefined()
 
 let sum = numbers.reduce((i,j = 0) => i + j)
 
-console.log("A soma dos numeros é " + sum)
+console.log(`A soma dos numeros é ${sum}`)
