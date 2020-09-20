@@ -5,13 +5,20 @@
   "license": "WTFPL",
   "author": "Victor Gazzinelli",
   "scripts": {
-    "build": "parcel build src/index.html",
-    "dev": "parcel src/index.html --open",
-    "start": "npm run build && npm run dev"
+    "start": "node_modules\\.bin\\webpack-dev-server",
+    "build": "node_modules\\.bin\\webpack"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.12.4",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "file-loader": "^0.11.2",
+    "html-webpack-plugin": "^2.29.0",
     "regenerator-runtime": "^0.13.7",
-    "sass": "^1.26.10"
+    "sass": "^1.26.11",
+    "sass-loader": "^10.0.2",
+    "webpack": "^3.0.0",
+    "webpack-dev-server": "^2.5.0"
   }
 }
