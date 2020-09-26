@@ -22,23 +22,39 @@
 
 <body>
 
+  <!-- 4.1.2 (Semantica) -->
+
   <header class="header">
-      <h1 class="header__tittle">Lorem ipsum dolor</h1>
-      <nav class="header__nav">
+      <h1 class="header__tittle" role="text" aria-label="page tittle">Lorem ipsum dolor</h1>
+      <nav class="header__nav" role="navigation">
+        <!-- 2.1.1 (Teclado) -->
         <ul>
           <li class="header__nav__item">
-            <a class="header__nav__link--is-active" href="#">
+            <a class="header__nav__link--is-active" aria-selected="true" aria-controls="navigation-item-home" aria-label="navigation-item-home" href="#">
               Home
+            </a>
+          </li>
+          <li class="header__nav__item">
+            <a class="header__nav__link" aria-selected="false" aria-controls="navigation-item-other" aria-label="navigation-item-other" href="#" tabindex="-1">
+              Other
             </a>
           </li>
         </ul>
       </nav>
   </header>
 
+  <!-- 3.3.2 (Rotulos e instrucoes) -->
   <div>
-    <span id="geolocationInputLabel"> Sua Localização: </span>
-    <span id="geolocationInput"></span>
+    <span id="geolocationInputLabel" aria-readonly="true"> Sua Localização: </span>
+    <span id="geolocationInput" aria-readonly="true" aria-labelledby="geolocationInputLabel" aria-live="assertive"></span>
   </div>
+
+
+  <!--1.1.1 (Conteudo nao textual)   -->
+  <div>
+    <img src="./img/icon.png" alt="Icone da pagina, uma estrela" width=192 height=192>
+  </div>
+
 
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
